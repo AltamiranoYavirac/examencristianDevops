@@ -9,14 +9,14 @@ def home():
     
     return f"""
     <div style="text-align: center;">
-        <h1>Autor: Cristian Alexander Altamirano Venegas</h1>
+        <h1>Autor: Altamirano Cristian</h1>
         <img src="{imagen_url}" alt="Imagen de bienvenida" style="max-width: 300px; border-radius: 10px;">
     </div>
     """
 
 @app.route('/saludo/<nombre>')
 def saludo(nombre): 
-    return f"<h2>Hola {nombre}, bienvenido a pgmoreno.byronrm.com</h2>"
+    return f"<h2>Hola {nombre}, bienvenido a venegas.byronrm.com</h2>"
 
 if __name__ == '__main__':
     # debug=True ayuda a ver errores si la imagen no carga
