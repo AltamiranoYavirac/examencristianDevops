@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   venegas:
-    image: 
+    image: ghcr.io/altamiranoyavirac/examencristiandevops:1.0.5
     deploy:
       labels:
         - "traefik.enable=true"
