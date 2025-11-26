@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  venegas:
+    image: 
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.venegas.entrypoints=http"
+        - "traefik.http.routers.venegas.rule=Host(`venegas.byronrm.com`)"
+        - "traefik.http.middlewares.venegas-https-redirect.redirectscheme.scheme=https"
+        - "traefik.http.routers.venegas.middlewares=venegas-https-redirect"
+        - "traefik.http.routers.venegas-secure.entrypoints=https"
+        - "traefik.http.routers.venegas-secure.rule=Host(`venegas.byronrm.com`)"
+        - "traefik.http.routers.venegas-secure.tls=true"
+        - "traefik.http.routers.venegas-secure.tls.certresolver=http"
+        - "traefik.http.routers.venegas-secure.service=venegas"
+        - "traefik.http.services.venegas.loadbalancer.server.port=80"
+        - "traefik.docker.network=traefik-public"
+    networks:
+      - traefik-public
+
+networks:
+  traefik-public:
+    external: true
