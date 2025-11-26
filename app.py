@@ -9,7 +9,7 @@ def home():
     
     return f"""
     <div style="text-align: center;">
-        <h1>Hola desde Flask con Traefik 🚀</h1>
+        <h1>Autor: Cristian Alexander Altamirano Venegas</h1>
         <img src="{imagen_url}" alt="Imagen de bienvenida" style="max-width: 300px; border-radius: 10px;">
     </div>
     """
